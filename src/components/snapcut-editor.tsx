@@ -30,7 +30,7 @@ export function SnapcutEditor() {
   if (!mounted) return null
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen transition-colors duration-300 ${!darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <header className="flex justify-between items-center p-6 bg-white dark:bg-gray-800 shadow-md transition-colors duration-300">
         <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text">
           SnapCut
@@ -41,14 +41,14 @@ export function SnapcutEditor() {
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? (
+            {!darkMode ? (
               <Sun className="w-6 h-6 text-yellow-400" />
             ) : (
               <Moon className="w-6 h-6 text-gray-600" />
             )}
           </button>
           <a
-            href="https://github.com"
+            href="https://github.com/YashM20/snapcut"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full flex items-center gap-2 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg"
@@ -63,7 +63,7 @@ export function SnapcutEditor() {
         <div className="w-full max-w-4xl aspect-video bg-white dark:bg-gray-800 rounded-lg shadow-2xl flex justify-center items-center overflow-hidden transition-all duration-300 group">
           <div className="relative w-full h-full">
             <img
-              src="/placeholder.svg?height=720&width=1280"
+              src="https://picsum.photos/800/600"
               alt="Editable image"
               className="w-full h-full object-cover"
             />
@@ -76,8 +76,8 @@ export function SnapcutEditor() {
         </div>
       </main>
 
-      <footer className="fixed bottom-0 left-0 right-0 p-6 bg-white dark:bg-gray-800 shadow-lg transition-colors duration-300">
-        <div className="flex justify-center gap-6 max-w-4xl mx-auto overflow-x-auto">
+      <footer className="fixed bottom-0 left-0 right-0 p-6 bg-white dark:bg-gray-800/0 shadow-lg transition-colors duration-300">
+        <div className="flex justify-center items-center py-4 gap-6 max-w-4xl mx-auto overflow-x-auto overflow-y-visible">
           {[
             { icon: Upload, label: 'Upload' },
             { icon: Wand2, label: 'Auto Enhance' },

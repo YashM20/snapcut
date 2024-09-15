@@ -16,6 +16,7 @@ import {
   Share2,
   Download
 } from 'lucide-react'
+import Image from 'next/image'
 
 export function SnapcutEditor() {
   const [darkMode, setDarkMode] = useState(false)
@@ -62,7 +63,11 @@ export function SnapcutEditor() {
       <main className="flex-1 flex justify-center items-center p-8">
         <div className="w-full max-w-4xl aspect-video bg-white dark:bg-gray-800 rounded-lg shadow-2xl flex justify-center items-center overflow-hidden transition-all duration-300 group">
           <div className="relative w-full h-full">
-            <img
+            <Image
+              priority
+              loading='lazy'
+              height={600}
+              width={800}
               src="https://picsum.photos/800/600"
               alt="Editable image"
               className="w-full h-full object-cover"

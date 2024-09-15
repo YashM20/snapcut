@@ -21,7 +21,6 @@ import Image from 'next/image'
 export function SnapcutEditor() {
   const [darkMode, setDarkMode] = useState(false)
   const [mounted, setMounted] = useState(false)
-  // const [image, setImage] = useState<HTMLImageElement | null>(null)
   const [image, setImage] = useState<string | null>(null)
 
   useEffect(() => {
@@ -29,7 +28,6 @@ export function SnapcutEditor() {
   }, [])
 
   const toggleDarkMode = () => setDarkMode(!darkMode)
-
 
   const handleImageSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -57,6 +55,7 @@ export function SnapcutEditor() {
   const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
   }, [])
+
   if (!mounted) return null
 
   return (
@@ -96,31 +95,9 @@ export function SnapcutEditor() {
           onDragOver={handleDragOver}
         >
           <div className="relative w-full h-full">
-            {/* {
-              !image ? (
-                <label
-                  htmlFor="image"
-                  className="flex h-full flex-col items-center justify-center gap-4 p-8 bg-gray-100 dark:bg-gray-700 rounded-lg cursor-pointer transition-colors duration-300"
-                >
-                  <Upload className="w-16 h-16 mb-4 text-gray-600 dark:text-gray-400 " />
-                  <span className="text-lg text-gray-600 dark:text-gray-400">
-                    Drag & Drop or <span className="text-purple-600 dark:text-pink-600">Upload</span> an image
-                  </span>
-                  <input
-                    id="image"
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={handleImageSelect}
-                  />
-
-                </label>
-              ) : null
-            } */}
             {image ? (
               <Image
                 priority
-                // loading='lazy'
                 height={600}
                 width={800}
                 // src="https://picsum.photos/800/600"
@@ -145,15 +122,8 @@ export function SnapcutEditor() {
                   className="hidden"
                   onChange={handleImageSelect}
                 />
-
               </label>
             )}
-
-            {/* <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <button className="px-4 py-2 bg-white text-gray-900 rounded-full hover:bg-gray-100 transition-colors duration-300">
-                Edit Image
-              </button>
-            </div> */}
           </div>
         </div>
       </main>

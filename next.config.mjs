@@ -4,7 +4,7 @@ const nextConfig = {
   output: 'standalone',
   pageExtensions: ['tsx', 'ts', 'jsx', 'js', 'mdx', 'md'],
   experimental: {
-    // scrollRestoration: true,
+    scrollRestoration: true,
     // appDocumentPreloading: true,
     // workerThreads: true,
     // optimizeServerReact: true,

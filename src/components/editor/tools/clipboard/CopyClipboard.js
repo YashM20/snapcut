@@ -1,6 +1,6 @@
 "use client"
-import { ArrowDownTrayIcon, ClipboardIcon } from "@heroicons/react/24/outline";
-import React, { useEffect } from "react";
+import { ClipboardIcon } from "@heroicons/react/24/outline";
+import React from "react";
 import * as htmlToImage from "html-to-image";
 import { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
@@ -14,7 +14,8 @@ export default function CopyClipboard() {
   const [isVisible, setIsVisible] = useState(false);
   const [isCopyButtonDisabled, setIsCopyButtonDisabled] =
     useState(false);
-  const [copyFormat, setCopyFormat] = useState("png");    // png by default
+  // const [copyFormat, setCopyFormat] = useState("png");    // png by default
+  const copyFormat = "png"    // png by default
   // Click away handle
   const handleClickAway = () => {
     setIsVisible(false);
@@ -53,7 +54,7 @@ export default function CopyClipboard() {
                 toast.dismiss("start");
                 toast.success("Copied to Clipboard Successfully!");
                 setIsCopyButtonDisabled(false);
-              }).catch((error) => {
+              }).catch(() => {
                 toast.dismiss("start");
                 toast.error("Failed to Copy to Clipboard!");
                 setIsCopyButtonDisabled(false);

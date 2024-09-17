@@ -17,12 +17,12 @@ const Viewer = ({ img }: Props) => {
     setImgH(document?.getElementById("parent-img")?.offsetHeight || 0);
     setImgW(document?.getElementById("parent-img")?.offsetWidth || 0);
     // }
-  });
+  }, [img]);
 
   return (
     <div className="h-[80vh] min-w-full w-full flex justify-center items-center overflow-auto ">
-      <div className="rounded-md overflow-hidden">
-        <div id="my-node" className="relative max-w-[80vw] sm:h-96 p-6 flex justify-center items-center bg-slate-300/10 ">
+      <div className="rounded-md overflow-hidden bg-transparent/15">
+        <div id="my-node" className="relative max-w-[80vw] sm:h-96 p-6 flex  justify-center items-center bg-transparent ">
           <Draggable>
             <Image
               height={200}

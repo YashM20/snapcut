@@ -8,7 +8,7 @@ export default function useClipboardImage(onImageChange) {
       if (clipboardItems.items[i].type.indexOf("image") === 0) {
         let blob = clipboardItems.items[i].getAsFile();
         let reader = new FileReader();
-        reader.onload = function (evt) {
+        reader.onload = function () {
           onImageChange({ target: { files: [new File([blob], "pasted-image.png")] } });
         };
         reader.readAsArrayBuffer(blob);
@@ -21,5 +21,5 @@ export default function useClipboardImage(onImageChange) {
     return () => {
       window.removeEventListener('paste', handlePaste);
     };
-  }, [onImageChange]);
+  }, [onImageChange, handlePaste]);
 }

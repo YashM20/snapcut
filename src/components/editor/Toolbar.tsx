@@ -1,6 +1,5 @@
 "use client"
-import React, { useEffect } from "react";
-import Background from "./tools/background/Background";
+import React from "react";
 import Corners from "./tools/corners/Corners";
 import Padding from "./tools/padding/Padding";
 import Shadow from "./tools/shadow/Shadow";
@@ -9,6 +8,7 @@ import Resize from "./tools/resize/Resize";
 import useClipboardImage from "./tools/clipboard/Clipboard";
 import CopyClipboard from "./tools/clipboard/CopyClipboard";
 import { UploadIcon } from "@radix-ui/react-icons";
+import { Upload } from "lucide-react";
 
 
 export default function Toolbar({ onImageChange, img }) {
@@ -23,7 +23,7 @@ export default function Toolbar({ onImageChange, img }) {
               className="transform p-4 flex font-semibold text-lg justify-center items-center px-8 rounded-full bg-gradient-to-r from-emerald-800/80 to-emerald-700 text-white/80 ease-in-out  group outline-none ring  dark:ring-0 ring-emerald-100/50 hover:from-emerald-950 hover:to-emerald-900 transition-all duration-300 shadow-lg"
               onClick={() => document.getElementById("file_select").click()}
             >
-              <UploadIcon className="w-6 mr-2 stroke-[2] group-hover:-rotate-3 group-active:rotate-3" />
+              <Upload className="w-5 mr-4 mb-1 stroke-[2] group-hover:-rotate-3 group-active:rotate-3" />
               Upload Screenshot
             </button>
           )}

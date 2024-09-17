@@ -3,8 +3,10 @@ import { PaintBrushIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
 import Color from "./Color";
-const getColors = require("get-image-colors");
-var rgb2hex = require("rgb2hex");
+// const getColors = require("get-image-colors");
+// var rgb2hex = require("rgb2hex");
+import getColors from "get-image-colors";
+import rgb2hex from "rgb2hex";
 
 export default function Background({ img }) {
   const [isVisible, setIsVisible] = useState(false);

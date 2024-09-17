@@ -49,11 +49,13 @@ export default function Download() {
         });
       });
   }
+
   useEffect(() => {
     if (isVisible) {
       document.getElementById(downloadFormat).checked = true;
     }
-  }, [isVisible]);
+  }, [isVisible, downloadFormat]);
+
   return (
     <>
       <div className="flex flex-col justify-center items-center rounded-xl cursor-pointer active:scale-95 transform transition-all ease-in-out duration-200">

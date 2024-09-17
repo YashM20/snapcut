@@ -1,32 +1,10 @@
 "use client"
-import { useState, useEffect, useCallback } from 'react'
 import {
-  Moon,
-  Sun,
   Github,
-  Upload,
-  Wand2,
-  Layers,
-  Paintbrush,
-  Maximize2,
-  CornerUpLeft,
-  Square,
-  Cloud,
-  Share2,
-  Download
 } from 'lucide-react'
-import Image from 'next/image'
-import { toast } from 'sonner'
-type Props = {}
 
-const EditorHeader = (props: Props) => {
-  const [darkMode, setDarkMode] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const toggleDarkMode = () => setDarkMode(!darkMode)
+const EditorHeader = () => {
+  // const toggleDarkMode = () => setDarkMode(!darkMode)
 
   return (
     <header className="flex justify-between items-center p-6 transition-colors duration-300">
@@ -49,7 +27,7 @@ const EditorHeader = (props: Props) => {
           href="https://github.com/YashM20/snapcut"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-2 bg-gradient-to-r  from-emerald-800/80 to-emerald-700 text-white rounded-full flex items-center gap-2 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg"
+          className="px-4 py-2 bg-gradient-to-r  hover:from-emerald-800/80 hover:to-emerald-700 text-white rounded-full flex items-center gap-2 from-emerald-950 to-emerald-900 transition-all duration-300 shadow-lg"
         >
           <Github className="w-5 h-5" />
           GitHub

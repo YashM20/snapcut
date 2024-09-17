@@ -17,6 +17,7 @@ import {
   Download
 } from 'lucide-react'
 import Image from 'next/image'
+import { toast } from 'sonner'
 
 export function SnapcutEditor() {
   const [darkMode, setDarkMode] = useState(false)
@@ -61,7 +62,7 @@ export function SnapcutEditor() {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${!darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <header className="flex justify-between items-center p-6 bg-white dark:bg-gray-800 shadow-md transition-colors duration-300">
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text">
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-slate-200 text-transparent bg-clip-text">
           SnapCut
         </h1>
         <div className="flex items-center gap-4">
@@ -145,6 +146,10 @@ export function SnapcutEditor() {
             <button
               key={index}
               className="flex flex-col items-center group"
+              onClick={() => {
+                console.log(item.label)
+                toast.info(item.label)
+              }}
             >
               <div className={`w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-br transition-transform duration-300 group-hover:scale-110 ${getGradient(index)
                 }`}>

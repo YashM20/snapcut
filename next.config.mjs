@@ -2,6 +2,7 @@
 
 const nextConfig = {
   output: 'standalone',
+  reactStrictMode: false,
   pageExtensions: ['tsx', 'ts', 'jsx', 'js', 'mdx', 'md'],
   experimental: {
     scrollRestoration: true,
@@ -19,6 +20,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'picsum.photos',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      }
     ],
   },
 };

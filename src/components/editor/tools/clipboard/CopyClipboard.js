@@ -24,7 +24,7 @@ export default function CopyClipboard() {
     setIsVisible(false);
     setIsCopyButtonDisabled(true);
     // toast.info("Starting Copy...", { toastId: "start" });
-    toast.info("Starting Copy...", { id: "start" });
+    // toast.info("Starting Copy...", { id: "start" });
     document.getElementById("my-node").style.transform = "scale(1)"; //imp
     let width = document.getElementById("my-node").offsetWidth;
     let height = document.getElementById("my-node").offsetHeight;
@@ -51,11 +51,11 @@ export default function CopyClipboard() {
             canvas.toBlob(function (blob) {
               let item = new ClipboardItem({ ['image/' + copyFormat]: blob });
               navigator.clipboard.write([item]).then(() => {
-                toast.dismiss("start");
+                // toast.dismiss("start");
                 toast.success("Copied to Clipboard Successfully!");
                 setIsCopyButtonDisabled(false);
               }).catch(() => {
-                toast.dismiss("start");
+                // toast.dismiss("start");
                 toast.error("Failed to Copy to Clipboard!");
                 setIsCopyButtonDisabled(false);
               });

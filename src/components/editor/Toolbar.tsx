@@ -9,7 +9,7 @@ import useClipboardImage from "./tools/clipboard/Clipboard";
 import CopyClipboard from "./tools/clipboard/CopyClipboard";
 import { UploadIcon } from "@radix-ui/react-icons";
 import { Upload } from "lucide-react";
-
+import Background from "./tools/background/Background";
 
 export default function Toolbar({ onImageChange, img }) {
   useClipboardImage(onImageChange);
@@ -42,7 +42,7 @@ export default function Toolbar({ onImageChange, img }) {
                 </button>
                 <CopyClipboard />
                 <Download />
-                {/* <Background img={img} /> */}
+                <Background img={img} />
                 <Resize />
                 <Corners />
                 <Padding />

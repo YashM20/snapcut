@@ -21,7 +21,7 @@ export default function Download() {
   function downloadCustom(size) {
     setIsVisible(false);
     setIsDownloadButtonDisabled(true);
-    toast.info("Starting Download...", { toastId: "start" });
+    // toast.info("Starting Download...", { toastId: "start" });
     document.getElementById("my-node").style.transform = "scale(1)"; //imp
     let width = document.getElementById("my-node").offsetWidth;
     let height = document.getElementById("my-node").offsetHeight;
@@ -44,7 +44,9 @@ export default function Download() {
           link.href = dataUri;
           link.click();
           toast.dismiss("start");
-          toast.success("Downloaded Successfully!");
+          toast("Downloaded Successfully!", {
+            duration: 2000,
+          });
           setIsDownloadButtonDisabled(false);
         });
       });

@@ -10,8 +10,15 @@ export default function Corners() {
     setIsVisible(false);
   };
   function setBorderRadius(r) {
-    document.getElementById("parent-img").style.borderRadius = `${r}rem`;
+    const parentImg = document.getElementById("parent-img");
+    if (parentImg) {
+      parentImg.style.borderRadius = `${r}rem`;
+      setIsVisible(false);
+    } else {
+      console.warn("Element with ID 'parent-img' not found");
+    }
   }
+
   return (
     <>
       <div
